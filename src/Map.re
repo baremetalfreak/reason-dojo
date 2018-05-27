@@ -1,7 +1,3 @@
-/* module Style = {
-
-}; */
-
 module ComposableMap = {
   [@bs.deriving abstract]
   type projectionConfigT= {
@@ -73,7 +69,7 @@ module Geographies = {
 module Geography = {
   type geographyT;
   type projectionT;
-  
+
   [@bs.deriving abstract]
   type styleT = {
     default: ReactDOMRe.Style.t,
@@ -198,7 +194,7 @@ let make = (_children) => {
 
     fetch();
 
-    
+
 
     let urlPost = "https://immense-river-25513.herokuapp.com/add-location";
     let body = "fidelman";
