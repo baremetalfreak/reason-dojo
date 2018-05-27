@@ -1,3 +1,7 @@
+/* We could use Js.Global.setTimeout, but for the fun we type setTimeout */
+[@bs.val]
+external setTimeout: (unit => unit, int)=> unit = "";
+
 module ComposableMap = {
   [@bs.deriving abstract]
   type projectionConfigT= {
@@ -188,7 +192,7 @@ let make = (_children) => {
       Fetcher.fetchGet(~url = urlGet, ~cb = (data) => {
         self.send(Update(data));
 
-        Js.Global.setTimeout(fetch, 5000) |> ignore;
+        setTimeout(fetch, 5000) |> ignore;
       });
     };
 
